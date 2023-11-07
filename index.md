@@ -150,6 +150,7 @@ echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/contai
 
 ![p1](p1.png)
 
+
 **Step 7.Pull apache in superset.**
 
 ~~~
@@ -288,6 +289,7 @@ podman  exec -it superset superset init
 
 
 ![p1](p10.png)
+
 
 
  **Step 17. Open the browser.**
