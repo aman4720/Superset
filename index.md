@@ -1,6 +1,6 @@
 
 
-# Setup Superset 
+                                                                       Setup Superset 
 
 
 **1. Overviews**
@@ -61,6 +61,7 @@ sudo apt install curl
 **Install:** Specifies the action to be taken, which is to install a package.
 
 **curl:** The name of the package to be installed, a command-line tool for URL-related data transfer.
+
 ( curl :- is a command-line tool that allows you to fetch data from the internet. It's like a web browser for your terminal. You can download files, make web requests, and interact with web services directly from the command line.)
 
 **Output**
@@ -74,11 +75,12 @@ sudo apt install curl
 sudo apt update
 ~~~
 
-**sudo:** This stands for "Superuser Do" and is used to execute commands with superuser (administrator) privileges. It allows you to perform actions that require elevated permissions.
+**sudo:** This stands for "Superuser Do" and is used to execute commands with superuser (administrator) privileges. 
+It allows you to perform actions that require elevated permissions.
 
-**apt:** This stands for "Advanced Package Tool." It's a command-line tool used to manage software packages on Debian-based systems. You can use it to install, update, remove, and manage software packages.
+**apt:** This stands for "Advanced Package Tool." manager used for managing software.
 
-**update:** This is a subcommand of apt that instructs the package manager to update the package information. The package information is a database of available software packages, their versions, and where to download them from. 
+**update:** This is a subcommand of apt that instructs the package manager to update the package information.
 
 ( Running "sudo apt update" ensures that your system is aware of the latest software packages and updates available in the repositories. 
 
@@ -96,9 +98,9 @@ sudo apt upgrade
 
 **sudo:**  This stands for "Superuser Do" and is used to execute commands with superuser (administrator) privileges. It allows you to perform actions that require elevated permissions.
 
-**apt:** This stands for "Advanced Package Tool." It's a command-line tool used to manage software packages on Debian-based systems. You can use it to install, update, remove, and manage software packages.
+**apt:** This stands for "Advanced Package Tool." You can use it to install, update, remove, and manage software packages.
 
-**Update:** This is the specific task you're asking the computer to do. You want it to go online, check for any new updates or changes to the software it has, and bring that information back to your computer.
+**Update:** The package information is a database of available software packages, their versions, and where to download them from. 
 
 **Output**
 
@@ -133,7 +135,7 @@ sudo apt upgrade
 ~~~
 **Podman :** is a tool that helps you manage containers, which are like virtual machines for running applications.
 
- **version :** you're checking which edition of Podman you have. It's like checking if you have the latest or older version with improvements or fixes.
+ **version :** You're checking which edition of Podman you have. It's like checking if you have the latest or older version with improvements or fixes.
 
 
  **Output**
@@ -310,4 +312,8 @@ podman  exec -it superset superset init
 
 
 
+
+
+Referral Link :-
+https://superset.apache.org/docs/intro/
 
