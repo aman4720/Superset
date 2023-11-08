@@ -1,4 +1,4 @@
-## <p style="text-align: center" Setup Superset</p> 
+#Setup Superset
 
 
 **1. Overviews**
