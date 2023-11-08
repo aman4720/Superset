@@ -311,7 +311,3 @@ podman  exec -it superset superset init
 
 
 
-
-Referral Link :-
-https://superset.apache.org/docs/intro/
-
