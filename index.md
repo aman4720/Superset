@@ -8,7 +8,7 @@ This document provides a step-by-step overview of setting up Apache using Podman
 
 **2. Task requirement**
 
-To run the superset with a podman. 
+To install the superset with a podman. 
 
 
 **Definition of Superset**
@@ -19,6 +19,7 @@ Superset is a tool that helps people look at data and make graphs and charts eas
 
 OS: Ubuntu 22.04 
      System configuration
+     
 
 CPU:  Intel Core i5-8350U CPU @ 1.70GHz x 8
 RAM:  8GB 
