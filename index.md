@@ -1,7 +1,7 @@
 # Setup Superset
 
 
-**1. Overviews**
+**1. Overview**
 
 This document provides a step-by-step overview of setting up Apache using Podman and on an Ubuntu 22.04 system.
 
@@ -18,7 +18,7 @@ Superset is a tool that helps people look at data and make graphs and charts eas
 **3.  Environment details**
 
 OS: Ubuntu 22.04 
-     System configuration
+System configuration
      
 
 CPU:  Intel Core i5-8350U CPU @ 1.70GHz x 8
@@ -28,9 +28,6 @@ Storage:  512GB
 **4.  List of tools and technologies**
 
 Podman version 3.4.2
-
-
-Others
 
 VIM
 
@@ -45,30 +42,7 @@ Vim - It is a highly configurable text editor built to make creating and changin
 
 **6.  Command for the setup or configuration**
 
-
-**Step 1.** Run the following command to install curl.
-
-~~~
-sudo apt install curl
-~~~
-
-
-**sudo:** Provides administrative privileges to the command.
-
-**apt:** Refers to the APT package manager used for managing software.
-
-**Install:** Specifies the action to be taken, which is to install a package.
-
-**curl:** The name of the package to be installed, a command-line tool for URL-related data transfer.
-
-( curl :- is a command-line tool that allows you to fetch data from the internet. It's like a web browser for your terminal. You can download files, make web requests, and interact with web services directly from the command line.)
-
-**Output**
-
-![p1](p15.png)
-
-
-**Step 2. Updating Packages and Repositories.**
+**Step 1. Updating Packages and Repositories.**
 
 ~~~
 sudo apt update
@@ -89,7 +63,7 @@ It allows you to perform actions that require elevated permissions.
 
 
 
-**Step 3. Run the Upgrade command.**
+**Step 2. Run the Upgrade command.**
 
 ~~~
 sudo apt upgrade
@@ -106,7 +80,7 @@ sudo apt upgrade
 ![p1](p17.png)
 
 
-**Step 4. Run the following command to install Podman.**
+**Step 3. Run the following command to install Podman.**
 
 ~~~
  sudo apt install podman 
@@ -127,14 +101,14 @@ sudo apt upgrade
 
 
 
-**Step 5. Run the following command to check the Podman version.**
+**Step 4. Run the following command to check the Podman version.**
 
 ~~~
  podman version 
 ~~~
 **Podman :** is a tool that helps you manage containers, which are like virtual machines for running applications.
 
- **version :** You're checking which edition of Podman you have. It's like checking if you have the latest or older version with improvements or fixes.
+**version :** You're checking which edition of Podman you have. It's like checking if you have the latest or older version with improvements or fixes.
 
 
  **Output**
@@ -142,7 +116,7 @@ sudo apt upgrade
  ![p1](p14.png)
 
 
-**Step 6. Run the echo command**
+**Step 5. Run the echo command**
 
 ~~~
 echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/containers/registries.conf
@@ -152,16 +126,17 @@ echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/contai
 ![p1](p1.png)
 
 
-**Step 7.Pull apache in superset.**
+**Step 6. Pull Apache in superset.**
 
 ~~~
 podman pull apache/superset
 ~~~
+
 **Output**
 ![p1](p2.png)
 
 
-**Step 8. Run the command to install vim.**
+**Step 7. Run the command to install vim.**
 
 ~~~
 sudo apt install vim
@@ -183,17 +158,18 @@ sudo apt install vim
 ![p1](p3.png)
 
 
-**Step 9. Run command openssl.**
+**Step 8. Run command openssl.**
 
 ~~~
 openssl rand -base64 42
 ~~~
+
 **output**
 
 ![p1](p4.png)
 
 
-**Step 10.  To paste key in vim editor.**
+**Step 9.  Create a file .**
 
 ~~~
  vim superset_config.py
@@ -208,7 +184,7 @@ openssl rand -base64 42
 **Note:-** in this file save the above generate key.
 
 
-**Step 11. To create podman container.**
+**Step 10. To create podman container.**
 
 ~~~
 podman run -d -p 8080:8088 -e "SUPERSET_SECRET_KEY=your_secret_key_here" --name superset apache/superset 
@@ -220,7 +196,7 @@ podman run -d -p 8080:8088 -e "SUPERSET_SECRET_KEY=your_secret_key_here" --name 
 
 
 
-**Step 12. To check podman container is running or not.**
+**Step 11. To check podman container is running or not.**
 
 ~~~
 podman ps
@@ -231,10 +207,17 @@ podman ps
 ![p1](p6.png)
 
 
-**Step 13. Set up your local admin account.**
+**Step 12. Set up your local admin account.**
 
 ~~~
  podman exec -it superset superset fab create-admin \
+
+              --username admin \
+              --firstname Superset \
+              --lastname Admin \
+              --email admin@superset.com \
+              --password admin
+
 ~~~
 
 **Output**
@@ -246,7 +229,7 @@ podman ps
 
 
 
-**Step 14. Migrate local DB to the latest.**
+**Step 13. Migrate local DB to the latest.**
 
 ~~~
  podman exec -it superset superset db upgrade
@@ -267,7 +250,7 @@ podman ps
 
 
 
-**Step 15. Setup roles.**
+**Step 14. Setup roles.**
 
 ~~~
 podman  exec -it superset superset init
@@ -279,7 +262,7 @@ podman  exec -it superset superset init
 
 
 
-**Step16. Load Examples.**
+**Step 15. Load Examples.**
 
 
 ~~~
@@ -293,9 +276,15 @@ podman  exec -it superset superset init
 
 
 
- **Step 17. Open the browser.**
+ **Step 16. Open the browser.**
 
-     Log in and take a look -- navigate to http://localhost:8080/login/ -- u/p: [admin/admin]
+ This is the correct URL is :-
+ 
+ http://localhost:8080/login/ 
+     
+ Note :- ( User / Password )
+ 
+ [admin/admin]
 
 
 **Output**
