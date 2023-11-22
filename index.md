@@ -11,7 +11,7 @@ This document provides a step-by-step overview of setting up Apache using Podman
 To install the superset with a podman. 
 
 
-**Definition of Superset**
+**Definition of superset**
 
 Superset is a tool that helps people look at data and make graphs and charts easily. It can be used instead of expensive business tools and works with different types of data. You can use it to create charts without knowing how to code it's simple and quick.
 
@@ -58,7 +58,7 @@ It allows you to perform actions that require elevated permissions.
 ( Running "sudo apt update" ensures that your system is aware of the latest software packages and updates available in the repositories. 
 
 **Output**
-
+```
 aman@aman:~$ sudo apt update 
 Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
 Hit:2 http://in.archive.ubuntu.com/ubuntu focal InRelease
@@ -69,7 +69,7 @@ Building dependency tree
 Reading state information... Done
 244 packages can be upgraded. Run 'apt list --upgradable' to see them.
 aman@aman:~$ 
-
+```
 
 
 
@@ -87,8 +87,27 @@ sudo apt upgrade
 **Update:** The package information is a database of available software packages, their versions, and where to download them from. 
 
 **Output**
+```
+aman@aman:~$ sudo apt upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+The following NEW packages will be installed:
+  ubuntu-pro-client-l10n
+The following packages will be upgraded:
+  accountsservice amd64-microcode apparmor apport apport-gtk apt apt-utils avahi-autoipd avahi-daemon
+  avahi-utils bind9-dnsutils bind9-host bind9-libs bolt bsdutils ca-certificates cpp-9 cups
+  cups-browsed cups-bsd cups-client cups-common cups-core-drivers cups-daemon cups-filters
+  cups-filters-core-drivers cups-ipp-utils cups-ppdc cups-server-common distro-info distro-info-data
+  dnsmasq-base fdisk firefox fonts-opensymbol fwupd fwupd-signed gcc-10-base gcc-9-base ghostscript
+  ghostscript-x gir1.2-accountsservice-1.0 gir1.2-gst-plugins-base-1.0 gir1.2-javascriptcoregtk-4.0
+  gir1.2-rsvg-2.0 gir1.2-webkit2-4.0 gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3
+  gstreamer1.0-plugins-base gstreamer1.0-plugins-base-apps gstreamer1.0-plugins-good
+  gstreamer1.0-pulseaudio gstreamer1.0-x intel-microcode iptables krb5-locales libaccountsservice0
 
-![p1](p17.png)
+  ```
+
 
 
 **Step 3. Run the following command to install Podman.**
@@ -107,8 +126,27 @@ sudo apt upgrade
 
 
 **Output**
-
-![p1](p16.png)
+```
+aman@aman:~$ sudo apt install podman 
+[sudo] password for aman: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  buildah catatonit conmon containernetworking-plugins crun fuse-overlayfs
+  golang-github-containernetworking-plugin-dnsname
+  golang-github-containers-common golang-github-containers-image libostree-1-1
+  libslirp0 slirp4netns uidmap
+Suggested packages:
+  containers-storage docker-compose
+The following NEW packages will be installed:
+  buildah catatonit conmon containernetworking-plugins crun fuse-overlayfs
+  golang-github-containernetworking-plugin-dnsname
+  golang-github-containers-common golang-github-containers-image libostree-1-1
+  libslirp0 podman slirp4netns uidmap
+0 upgraded, 14 newly installed, 0 to remove and 117 not upgraded.
+Need to get 25.4 MB of archives.
+```
 
 
 
@@ -123,8 +161,16 @@ sudo apt upgrade
 
 
  **Output**
+```
+aman@aman:~$ podman version 
+Version:      3.4.4
+API Version:  3.4.4
+Go Version:   go1.18.1
+Built:        Thu Jan  1 05:30:00 1970
+OS/Arch:      linux/amd64
+aman@aman:~$ 
 
- ![p1](p14.png)
+```
 
 
 **Step 5. Run the echo command**
@@ -133,8 +179,12 @@ sudo apt upgrade
 echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/containers/registries.conf
 ~~~
 **Output**
-
-![p1](p1.png)
+```
+aman@aman:~$ echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/containers/registries.conf
+[registries.search]
+registries = ['docker.io']
+aman@aman:~$ 
+```
 
 
 **Step 6. Pull Apache in superset.**
@@ -144,7 +194,27 @@ podman pull apache/superset
 ~~~
 
 **Output**
-![p1](p2.png)
+```
+aman@aman:~$ podman pull apache/superset
+Resolving "apache/superset" using unqualified-search registries (/etc/containers/registries.conf)
+Trying to pull docker.io/apache/superset:latest...
+Getting image source signatures
+Copying blob c11bdfacfd25 done  
+Copying blob c2cc0c2c5762 done  
+Copying blob a378f10b3218 done  
+Copying blob 8ad08235b1d3 done  
+Copying blob b41d32331f87 done  
+Copying blob 8529ad8df27f done  
+Copying blob 45a99dbb690d done  
+Copying blob cc3bcdb50319 done  
+Copying blob eb56f90ba117 done  
+Copying blob 6984b214a68a done  
+Copying blob 8afe6fb8ef94 done  
+Copying blob 92002a87e705 done  
+Copying blob 423b4c047235 done  
+Error: reading blob sha256:46a576915575cf55b3ed8e41b1b0adf1831f0275f6de6d8ddae9f098d38bbc64: Get "https://production.cloudflare.docker.com/registry-v2/docker/registry/v2/blobs/sha256/46/46a576915575cf55b3ed8e41b1b0adf1831f0275f6de6d8ddae9f098d38bbc64/data?verify=1700654610-BqkjBFb40X88sGvnuY0zI8SX1wo%3D": net/http: TLS handshake timeout
+aman@aman:~$ 
+```
 
 
 **Step 7. Run the command to install vim.**
@@ -166,7 +236,24 @@ sudo apt install vim
 
 **Output**
 
-![p1](p3.png)
+```
+aman@aman:~$ sudo apt install vim
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  vim-common vim-runtime vim-tiny
+Suggested packages:
+  ctags vim-doc vim-scripts indent
+The following NEW packages will be installed:
+  vim vim-runtime
+The following packages will be upgraded:
+  vim-common vim-tiny
+2 upgraded, 2 newly installed, 0 to remove and 115 not upgraded.
+Need to get 8,568 kB/9,359 kB of archives.
+After this operation, 37.6 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+```
 
 
 **Step 8. Run command openssl.**
@@ -177,7 +264,11 @@ openssl rand -base64 42
 
 **output**
 
-![p1](p4.png)
+```
+aman@aman:~$ openssl rand -base64 42
+bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN
+
+```
 
 
 **Step 9.  Create a file .**
@@ -188,7 +279,37 @@ openssl rand -base64 42
 
 **Output**
 
-![p1](p13.png)
+```
+SECRET_KEY =' bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN'
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                       
+~                                                                                                                                                                                             
+"superset_config.py" 1L, 72B                                                          1,71          All
+```
 
 
 
@@ -202,8 +323,31 @@ podman run -d -p 8080:8088 -e "SUPERSET_SECRET_KEY=your_secret_key_here" --name 
 ~~~
 
 **Output**
-
-![p1](p5.png)
+```
+aman@aman:~$ podman run -d -p 8080:8088 -e "SUPERSET_SECRET_KEY=your_secret_key_here" --name superset apache/superset 
+Resolving "apache/superset" using unqualified-search registries (/etc/containers/registries.conf)
+Trying to pull docker.io/apache/superset:latest...
+Getting image source signatures
+Copying blob c2cc0c2c5762 skipped: already exists  
+Copying blob a378f10b3218 skipped: already exists  
+Copying blob 8ad08235b1d3 skipped: already exists  
+Copying blob c11bdfacfd25 skipped: already exists  
+Copying blob 8529ad8df27f skipped: already exists  
+Copying blob b41d32331f87 skipped: already exists  
+Copying blob 45a99dbb690d skipped: already exists  
+Copying blob cc3bcdb50319 skipped: already exists  
+Copying blob eb56f90ba117 done  
+Copying blob 8afe6fb8ef94 done  
+Copying blob 423b4c047235 done  
+Copying blob 92002a87e705 done  
+Copying blob 6984b214a68a done  
+Copying blob 46a576915575 done  
+Copying config 8a254ef5f4 done  
+Writing manifest to image destination
+Storing signatures
+79422488e9f3019005a19f57a7f377c5ae43d089cf591e098eea453c078daca4
+aman@aman:~$ 
+```
 
 
 
@@ -215,14 +359,18 @@ podman ps
 
 **Output**
 
-![p1](p6.png)
+```
+aman@aman:~$ podman ps
+CONTAINER ID  IMAGE                             COMMAND               CREATED             STATUS                 PORTS                   NAMES
+79422488e9f3  docker.io/apache/superset:latest  /usr/bin/run-serv...  About a minute ago  Up About a minute ago  0.0.0.0:8080->8088/tcp  superset
+aman@aman:~$ 
+```
 
 
 **Step 12. Set up your local admin account.**
 
 ~~~
  podman exec -it superset superset fab create-admin \
-
               --username admin \
               --firstname Superset \
               --lastname Admin \
@@ -233,7 +381,22 @@ podman ps
 
 **Output**
 
-![p1](p7.png)
+```
+aman@aman:~$ podman exec -it superset superset fab create-admin \
+              --username admin \
+              --firstname Superset \
+              --lastname Admin \
+              --email admin@superset.com \
+              --password admin
+logging was configured successfully
+2023-11-22 11:34:00,308:INFO:superset.utils.logging_configurator:logging was configured successfully
+2023-11-22 11:34:00,313:INFO:root:Configured event logger of type <class 'superset.utils.log.DBEventLogger'>
+/usr/local/lib/python3.9/site-packages/flask_limiter/extension.py:293: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+Recognized Database Authentications.
+Admin User admin created.
+aman@aman:~$ 
+```
 
 
 
@@ -248,7 +411,22 @@ podman ps
 
 **Output**
 
-![p1](p8.png)
+```
+aman@aman:~$ podman exec -it superset superset db upgrade
+logging was configured successfully
+2023-11-22 11:35:49,533:INFO:superset.utils.logging_configurator:logging was configured successfully
+2023-11-22 11:35:49,539:INFO:root:Configured event logger of type <class 'superset.utils.log.DBEventLogger'>
+/usr/local/lib/python3.9/site-packages/flask_limiter/extension.py:293: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+WARNI [alembic.env] SQLite Database support for metadata databases will         be removed in a future version of Superset.
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 4e6a06bad7a8, Init
+INFO  [alembic.runtime.migration] Running upgrade 4e6a06bad7a8 -> 5a7bad26f2a7, empty message
+INFO  [alembic.runtime.migration] Running upgrade 5a7bad26f2a7 -> 1e2841a4128, empty message
+INFO  [alembic.runtime.migration] Running upgrade 1e2841a4128 -> 2929af7925ed, TZ offsets in data sources
+INFO  [alembic.runtime.migration] Running upgrade 2929af7925ed -> 289ce07647b, Add encrypted password field
+```
 
 
 
@@ -269,7 +447,33 @@ podman  exec -it superset superset init
 
 **Output**
 
-![p1](p9.png)
+```
+aman@aman:~$ podman  exec -it superset superset init
+logging was configured successfully
+2023-11-22 11:42:08,847:INFO:superset.utils.logging_configurator:logging was configured successfully
+2023-11-22 11:42:08,852:INFO:root:Configured event logger of type <class 'superset.utils.log.DBEventLogger'>
+/usr/local/lib/python3.9/site-packages/flask_limiter/extension.py:293: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+Syncing role definition
+2023-11-22 11:42:16,625:INFO:superset.security.manager:Syncing role definition
+Syncing Admin perms
+2023-11-22 11:42:16,831:INFO:superset.security.manager:Syncing Admin perms
+Syncing Alpha perms
+2023-11-22 11:42:16,845:INFO:superset.security.manager:Syncing Alpha perms
+Syncing Gamma perms
+2023-11-22 11:42:17,134:INFO:superset.security.manager:Syncing Gamma perms
+Syncing sql_lab perms
+2023-11-22 11:42:17,306:INFO:superset.security.manager:Syncing sql_lab perms
+Fetching a set of all perms to lookup which ones are missing
+2023-11-22 11:42:17,473:INFO:superset.security.manager:Fetching a set of all perms to lookup which ones are missing
+Creating missing datasource permissions.
+2023-11-22 11:42:17,482:INFO:superset.security.manager:Creating missing datasource permissions.
+Creating missing database permissions.
+2023-11-22 11:42:17,487:INFO:superset.security.manager:Creating missing database permissions.
+Cleaning faulty perms
+2023-11-22 11:42:17,493:INFO:superset.security.manager:Cleaning faulty perms
+aman@aman:~$ 
+```
 
 
 
@@ -282,8 +486,29 @@ podman  exec -it superset superset init
 
 **Output**
 
-
-![p1](p10.png)
+```
+aman@aman:~$  podman exec -it superset superset load_examples
+logging was configured successfully
+2023-11-22 11:43:22,265:INFO:superset.utils.logging_configurator:logging was configured successfully
+2023-11-22 11:43:22,270:INFO:root:Configured event logger of type <class 'superset.utils.log.DBEventLogger'>
+/usr/local/lib/python3.9/site-packages/flask_limiter/extension.py:293: UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+  warnings.warn(
+Creating database reference for examples
+2023-11-22 11:43:23,521:INFO:superset.utils.database:Creating database reference for examples
+Loading examples metadata and related data into examples
+Creating default CSS templates
+Loading [World Bank's Health Nutrition and Population Stats]
+Creating table [wb_health_population] reference
+Creating a World's Health Bank dashboard
+Loading [Birth names]
+Done loading table!
+--------------------------------------------------------------------------------
+Creating table [birth_names] reference
+Creating some slices
+Creating a dashboard
+Loading [Random long/lat data]
+Done loading table!
+```
 
 
 
