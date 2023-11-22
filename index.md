@@ -59,7 +59,18 @@ It allows you to perform actions that require elevated permissions.
 
 **Output**
 
-![p1](p11.png)
+aman@aman:~$ sudo apt update 
+Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:2 http://in.archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://in.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://in.archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+244 packages can be upgraded. Run 'apt list --upgradable' to see them.
+aman@aman:~$ 
+
+
 
 
 
