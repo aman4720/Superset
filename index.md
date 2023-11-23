@@ -178,6 +178,21 @@ aman@aman:~$
 ~~~
 echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/containers/registries.conf
 ~~~
+**echo**: Prints text to the terminal.
+
+-e: Enables interpretation of backslash escapes (like \n for a newline).
+
+"[registries.search]\nregistries = ['docker.io']": The text to be printed. It configures container registries, specifying that it should search for images on docker.io.
+|: Sends the output of the echo command as input to the next command.
+
+sudo: Runs the following command with superuser (administrator) privileges.
+
+tee /etc/containers/registries.conf: Writes the echoed text to the specified file (/etc/containers/registries.conf) with superuser permissions.
+
+So, in short, this command sets up container registry configurations, specifically telling the system to search for container images on Docker Hub (docker.io), and writes this configuration to the /etc/containers/registries.conf file using superuser privileges.
+
+
+
 **Output**
 ```
 aman@aman:~$ echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/containers/registries.conf
@@ -192,6 +207,15 @@ aman@aman:~$
 ~~~
 podman pull apache/superset
 ~~~
+
+podman: A container management tool similar to Docker.
+
+pull: Command used to download a container image from a container registry.
+
+apache/superset: The name of the container image to pull. In this case, it's the Apache Superset image.
+
+So, In  this command is telling Podman to download (pull) the Apache Superset container image from the default container registry.
+
 
 **Output**
 ```
@@ -262,6 +286,18 @@ Do you want to continue? [Y/n] y
 openssl rand -base64 42
 ~~~
 
+openssl: A command-line tool for using the OpenSSL library, often used for cryptographic operations.
+
+rand: Specifies the random number generator command in OpenSSL.
+
+-base64: Instructs OpenSSL to encode the random bytes in Base64 format.
+
+42: Specifies the number of bytes to generate.
+
+So, in short, this command generates 42 random bytes, and then encodes them in Base64 format using the OpenSSL tool.
+
+
+
 **output**
 
 ```
@@ -276,6 +312,13 @@ bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN
 ~~~
  vim superset_config.py
 ~~~
+
+vim: A text editor used in the command line.
+
+superset_config.py: The name of the file to open/edit. In this case, it's a Python configuration file for Superset.
+
+So, in short, this command opens the superset_config.py file in the Vim text editor, allowing you to view and modify its content.
+
 
 **Output**
 
@@ -321,6 +364,23 @@ SECRET_KEY =' bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN'
 ~~~
 podman run -d -p 8080:8088 -e "SUPERSET_SECRET_KEY=your_secret_key_here" --name superset apache/superset 
 ~~~
+podman: A container management tool similar to Docker.
+
+run: Command to start a new container.
+
+-d: Runs the container in the background (detached mode).
+
+-p 8080:8088: Maps port 8088 from the container to port 8080 on the host system.
+
+-e "SUPERSET_SECRET_KEY=your_secret_key_here": Sets an environment variable SUPERSET_SECRET_KEY with the specified value.
+
+--name superset: Assigns the name "superset" to the running container.
+
+apache/superset: Specifies the container image to use, in this case, Apache Superset.
+
+So, in short, this command runs a detached Apache Superset container, mapping container port 8088 to host port 8080, setting an environment variable for Superset's secret key, and naming the container "superset."
+
+
 
 **Output**
 ```
@@ -357,6 +417,13 @@ aman@aman:~$
 podman ps
 ~~~
 
+podman: A container management tool similar to Docker.
+
+ps: Stands for "process status." It shows the status of currently running containers.
+
+So, in short, this command lists the currently running containers along with their details, such as container IDs, names, and status.
+
+
 **Output**
 
 ```
@@ -376,8 +443,28 @@ aman@aman:~$
               --lastname Admin \
               --email admin@superset.com \
               --password admin
-
 ~~~
+
+podman: A container management tool similar to Docker.
+
+exec: Executes a command in a running container.
+
+-it: Specifies an interactive terminal.
+
+
+superset: The name of the container in which to execute the command.
+
+superset fab create-admin: Runs the Superset command-line tool (fab) to create a new admin user.
+
+--username admin: Specifies the username for the new admin user.
+--firstname Superset: Specifies the first name for the new admin user.
+--lastname Admin: Specifies the last name for the new admin user.
+--email admin@superset.com: Specifies the email address for the new admin user.
+--password admin: Specifies the password for the new admin user.
+
+So, in short, this command creates a new admin user in a running Superset container with specified details such as username, first name, last name, email, and password.
+
+
 
 **Output**
 
@@ -400,14 +487,23 @@ aman@aman:~$
 
 
 
-
-
-
 **Step 13. Migrate local DB to the latest.**
 
 ~~~
  podman exec -it superset superset db upgrade
 ~~~
+
+podman: A container management tool similar to Docker.
+
+exec: Executes a command in a running container.
+
+-it: Specifies an interactive terminal.
+
+superset: The name of the container in which to execute the command.
+
+superset db upgrade: Runs the Superset command to apply database migrations, updating the database schema.
+
+So, in short, this command upgrades the Superset database schema in the running Superset container.
 
 **Output**
 
@@ -444,6 +540,19 @@ INFO  [alembic.runtime.migration] Running upgrade 2929af7925ed -> 289ce07647b, A
 ~~~
 podman  exec -it superset superset init
 ~~~
+
+podman: A container management tool similar to Docker.
+
+exec: Executes a command in a running container.
+
+-it: Specifies an interactive terminal.
+
+superset: The name of the container in which to execute the command.
+
+superset init: Initializes Superset, often used for setting up initial configurations and structures.
+
+So, in short, this command initializes Superset within the running container, likely performing setup tasks or configurations needed for Superset to run properly.
+
 
 **Output**
 
@@ -484,6 +593,18 @@ aman@aman:~$
  podman exec -it superset superset load_examples
 ~~~
 
+podman: A container management tool similar to Docker.
+
+exec: Executes a command in a running container.
+
+-it: Specifies an interactive terminal.
+
+superset: The name of the container in which to execute the command.
+
+superset load_examples: Runs the Superset command to load example data or dashboards.
+
+So, in short, this command loads example data or dashboards into Superset within the running container. It's often used to provide users with pre-configured examples to explore and understand the capabilities of Superset.
+
 **Output**
 
 ```
@@ -521,6 +642,16 @@ Done loading table!
  Note :- ( User / Password )
  
  [admin/admin]
+
+http://: The protocol used for the web communication (Hypertext Transfer Protocol).
+
+localhost: Refers to the local machine, meaning the same computer that you are currently using.
+
+:8080: Specifies the port number 8080, indicating a specific communication endpoint on the local machine.
+
+/login/: The path or route on the web server, pointing to the login page.
+
+In short, this URL represents the login page of a web service or application running on your local machine, accessible through a web browser by navigating to http://localhost:8080/login/.
 
 
 **Output**
