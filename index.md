@@ -5,23 +5,23 @@ Definition of superset
 3.  Environment details
 4.  List of tools and technologies
 5. Definition of tools
-6.  Command for the setup or configuration.
-Step 1. Updating Packages and Repositories.
-Step 2. Run the Upgrade command.
-Step 3. Run the following command to install Podman.
-Step 4. Run the following command to check the Podman version.
-Step 5. Run the echo command.
-Step 6. Pull Apache in superset.
-Step 7. Run the command to install vim.
-Step 8. Run command openssl.
-Step 9.  Create a file.
-Step 10. To create podman container.
-Step 11. To check podman container is running or not.
-Step 12. Set up your local admin account.
-Step 13. Migrate local DB to the latest.
-Step 14. Setup roles.
-Step 15. Load Examples.
-Step 16. Open the browser.
+6.  Command for the setup or configuration.<BR>
+Step 1. Updating Packages and Repositories.<BR>
+Step 2. Run the Upgrade command.<BR>
+Step 3. Run the following command to install Podman.<BR>
+Step 4. Run the following command to check the Podman version.<BR>
+Step 5. Run the echo command.<BR>
+Step 6. Pull Apache in superset.<BR>
+Step 7. Run the command to install vim.<BR>
+Step 8. Run command openssl.<BR>
+Step 9.  Create a file.<BR>
+Step 10. To create podman container.<BR>
+Step 11. To check podman container is running or not.<BR>
+Step 12. Set up your local admin account.<BR>
+Step 13. Migrate local DB to the latest.<BR>
+Step 14. Setup roles.<BR>
+Step 15. Load Examples.<BR>
+Step 16. Open the browser.<BR>
 
 
 # Setup Superset
