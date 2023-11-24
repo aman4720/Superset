@@ -1,17 +1,17 @@
 
 1. Overview
 2. Task requirement
-3.Definition of superset
-4.  Environment details
-5.  List of tools and technologies
+3. Definition of superset
+4. Environment details
+5. List of tools and technologies
 6. Definition of tools
-7.Command for the setup or configuration.<BR>
+7. Command for the setup or configuration.<BR>
 Step 1. Updating Packages and Repositories.<BR>
 Step 2. Run the Upgrade command.<BR>
 Step 3. Run the following command to install Podman.<BR>
 Step 4. Run the following command to check the Podman version.<BR>
 Step 5. Run the echo command.<BR>
-Step 6. Pull Apache in superset.<BR>
+Step 6. Pull Apache in the superset.<BR>
 Step 7. Run the command to install vim.<BR>
 Step 8. Run command openssl.<BR>
 Step 9.  Create a file.<BR>
@@ -81,7 +81,7 @@ It allows you to perform actions that require elevated permissions.
 
 ( Running "sudo apt update" ensures that your system is aware of the latest software packages and updates available in the repositories. 
 
-# <H5>Output<H5>
+**Output**
 ```
 aman@aman:~$ sudo apt update 
 Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
