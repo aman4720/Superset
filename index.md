@@ -1,21 +1,47 @@
+
+1. Overview
+2. Task requirement
+Definition of superset
+3.  Environment details
+4.  List of tools and technologies
+5. Definition of tools
+6.  Command for the setup or configuration.
+Step 1. Updating Packages and Repositories.
+Step 2. Run the Upgrade command.
+Step 3. Run the following command to install Podman.
+Step 4. Run the following command to check the Podman version.
+Step 5. Run the echo command.
+Step 6. Pull Apache in superset.
+Step 7. Run the command to install vim.
+Step 8. Run command openssl.
+Step 9.  Create a file.
+Step 10. To create podman container.
+Step 11. To check podman container is running or not.
+Step 12. Set up your local admin account.
+Step 13. Migrate local DB to the latest.
+Step 14. Setup roles.
+Step 15. Load Examples.
+Step 16. Open the browser.
+
+
 # Setup Superset
 
 
-# 1. Overview
+**1. Overview**
 
 This document provides a step-by-step overview of setting up Apache using Podman and on an Ubuntu 22.04 system.
 
 
-# 2. Task requirement
+**2. Task requirement**
 
 To install the superset with a podman. 
 
 
-# Definition of superset
+**Definition of superset**
 
 Superset is a tool that helps people look at data and make graphs and charts easily. It can be used instead of expensive business tools and works with different types of data. You can use it to create charts without knowing how to code it's simple and quick.
 
-# 3.  Environment details
+**3.  Environment details**
 
 OS: Ubuntu 22.04 
 System configuration
@@ -25,14 +51,14 @@ CPU:  Intel Core i5-8350U CPU @ 1.70GHz x 8
 RAM:  8GB 
 Storage:  512GB 
 
-# 4.  List of tools and technologies
+**4.  List of tools and technologies**
 
 Podman version 3.4.2
 
 VIM
 
 
-# 5. Definition of tools
+**5. Definition of tools**
 
 Podman - It is an open-source tool for developing, managing, and running containers on your Linux systems. 
 
@@ -40,9 +66,9 @@ Vim - It is a highly configurable text editor built to make creating and changin
 
 
 
-# 6.  Command for the setup or configuration
+**6.  Command for the setup or configuration**
 
-# Step 1. Updating Packages and Repositories.
+**Step 1. Updating Packages and Repositories.**
 
 ~~~
 sudo apt update
@@ -57,7 +83,7 @@ It allows you to perform actions that require elevated permissions.
 
 ( Running "sudo apt update" ensures that your system is aware of the latest software packages and updates available in the repositories. 
 
-# Output
+**Output**
 ```
 aman@aman:~$ sudo apt update 
 Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
