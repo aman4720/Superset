@@ -11,7 +11,7 @@ Step 2. Run the Upgrade command.<BR>
 Step 3. Run the following command to install Podman.<BR>
 Step 4. Run the following command to check the Podman version.<BR>
 Step 5. Run the echo command.<BR>
-Step 6. Pull Apache in the superset.<BR>
+Step 6. Pull Apache in superset.<BR>
 Step 7. Run the command to install vim.<BR>
 Step 8. Run command openssl.<BR>
 Step 9.  Create a file.<BR>
@@ -35,11 +35,11 @@ This document provides a step-by-step overview of setting up Apache using Podman
 To install the superset with a podman. 
 
 
-# <H5>Definition of superset</H5>
+# <H5>3. Definition of superset</H5>
 
 Superset is a tool that helps people look at data and make graphs and charts easily. It can be used instead of expensive business tools and works with different types of data. You can use it to create charts without knowing how to code it's simple and quick.
 
-**3.  Environment details
+# <H5>3.  Environment details</H5>
 
 OS: Ubuntu 22.04 
 System configuration
