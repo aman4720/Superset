@@ -22,7 +22,10 @@ Step 13. Migrate local DB to the latest.<BR>
 Step 14. Setup roles.<BR>
 Step 15. Load Examples.<BR>
 Step 16. Open the browser.<BR>
-Setup Superset
+
+
+
+**Setup Superset**
 
 
 # <H5>1. Overview</H5>
