@@ -1,47 +1,45 @@
 
-# 1. Overview
-# 2. Task requirement
-# 3.Definition of superset
-# 4.  Environment details
-# 5.  List of tools and technologies
-# 6. Definition of tools
-# 7.Command for the setup or configuration.<BR>
-# Step 1. Updating Packages and Repositories.<BR>
-# Step 2. Run the Upgrade command.<BR>
-# Step 3. Run the following command to install Podman.<BR>
-# Step 4. Run the following command to check the Podman version.<BR>
-# Step 5. Run the echo command.<BR>
-# Step 6. Pull Apache in superset.<BR>
-# Step 7. Run the command to install vim.<BR>
-# Step 8. Run command openssl.<BR>
-# Step 9.  Create a file.<BR>
-# Step 10. To create podman container.<BR>
-# Step 11. To check podman container is running or not.<BR>
-# Step 12. Set up your local admin account.<BR>
-# Step 13. Migrate local DB to the latest.<BR>
-# Step 14. Setup roles.<BR>
-# Step 15. Load Examples.<BR>
-# Step 16. Open the browser.<BR>
+1. Overview
+2. Task requirement
+3.Definition of superset
+4.  Environment details
+5.  List of tools and technologies
+6. Definition of tools
+7.Command for the setup or configuration.<BR>
+Step 1. Updating Packages and Repositories.<BR>
+Step 2. Run the Upgrade command.<BR>
+Step 3. Run the following command to install Podman.<BR>
+Step 4. Run the following command to check the Podman version.<BR>
+Step 5. Run the echo command.<BR>
+Step 6. Pull Apache in superset.<BR>
+Step 7. Run the command to install vim.<BR>
+Step 8. Run command openssl.<BR>
+Step 9.  Create a file.<BR>
+Step 10. To create podman container.<BR>
+Step 11. To check podman container is running or not.<BR>
+Step 12. Set up your local admin account.<BR>
+Step 13. Migrate local DB to the latest.<BR>
+Step 14. Setup roles.<BR>
+Step 15. Load Examples.<BR>
+Step 16. Open the browser.<BR>
+Setup Superset
 
 
-# Setup Superset
-
-
-**1. Overview**
+# <H5>1. Overview</H5>
 
 This document provides a step-by-step overview of setting up Apache using Podman and on an Ubuntu 22.04 system.
 
 
-**2. Task requirement**
+# <H5>2. Task requirement</H5>
 
 To install the superset with a podman. 
 
 
-**Definition of superset**
+# <H5>Definition of superset</H5>
 
 Superset is a tool that helps people look at data and make graphs and charts easily. It can be used instead of expensive business tools and works with different types of data. You can use it to create charts without knowing how to code it's simple and quick.
 
-**3.  Environment details**
+**3.  Environment details
 
 OS: Ubuntu 22.04 
 System configuration
@@ -51,14 +49,14 @@ CPU:  Intel Core i5-8350U CPU @ 1.70GHz x 8
 RAM:  8GB 
 Storage:  512GB 
 
-**4.  List of tools and technologies**
+# <H5>4.  List of tools and technologies</H5>
 
 Podman version 3.4.2
 
 VIM
 
 
-**5. Definition of tools**
+# <H5>5. Definition of tools</H5>
 
 Podman - It is an open-source tool for developing, managing, and running containers on your Linux systems. 
 
@@ -66,9 +64,9 @@ Vim - It is a highly configurable text editor built to make creating and changin
 
 
 
-**6.  Command for the setup or configuration**
+# <H5>6.  Command for the setup or configuration<H5>
 
-**Step 1. Updating Packages and Repositories.**
+# <H5>Step 1. Updating Packages and Repositories.<H5>
 
 ~~~
 sudo apt update
@@ -83,7 +81,7 @@ It allows you to perform actions that require elevated permissions.
 
 ( Running "sudo apt update" ensures that your system is aware of the latest software packages and updates available in the repositories. 
 
-**Output**
+# <H5>Output<H5>
 ```
 aman@aman:~$ sudo apt update 
 Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
@@ -100,7 +98,7 @@ aman@aman:~$
 
 
 
-**Step 2. Run the Upgrade command.**
+# <H5>Step 2. Run the Upgrade command.<H5>
 
 ~~~
 sudo apt upgrade
@@ -136,7 +134,7 @@ The following packages will be upgraded:
 
 
 
-**Step 3. Run the following command to install Podman.**
+# <H5>Step 3. Run the following command to install Podman.</H5>
 
 ~~~
  sudo apt install podman 
@@ -176,7 +174,7 @@ Need to get 25.4 MB of archives.
 
 
 
-**Step 4. Run the following command to check the Podman version.**
+# <H5>Step 4. Run the following command to check the Podman version.</H5>
 
 ~~~
  podman version 
@@ -199,7 +197,7 @@ aman@aman:~$
 ```
 
 
-**Step 5. Run the echo command**
+# <H5>Step 5. Run the echo command</H5>
 
 ~~~
 echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/containers/registries.conf
@@ -228,7 +226,7 @@ aman@aman:~$
 ```
 
 
-**Step 6. Pull Apache in superset.**
+# <H5> Step 6. Pull Apache in superset.</H5>
 
 ~~~
 podman pull apache/superset
@@ -267,7 +265,7 @@ aman@aman:~$
 ```
 
 
-**Step 7. Run the command to install vim.**
+# <H5> Step 7. Run the command to install vim.</H5>
 
 ~~~
 sudo apt install vim
@@ -306,7 +304,7 @@ Do you want to continue? [Y/n] y
 ```
 
 
-**Step 8. Run command openssl.**
+# <H5>Step 8. Run command openssl.</H5>
 
 ~~~
 openssl rand -base64 42
@@ -333,7 +331,7 @@ bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN
 ```
 
 
-**Step 9.  Create a file .**
+# <H5>Step 9.  Create a file .</H5>
 
 ~~~
  vim superset_config.py
@@ -352,28 +350,7 @@ So, in short, this command opens the superset_config.py file in the Vim text edi
 SECRET_KEY =' bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN'
 ~                                                                                                       
 ~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
+~                                                                                                     
 ~                                                                                                       
 ~                                                                                                       
 ~                                                                                                                                                                                             
@@ -385,7 +362,7 @@ SECRET_KEY =' bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN'
 **Note:-** in this file save the above generate key.
 
 
-**Step 10. To create podman container.**
+# <H5>Step 10. To create podman container.</H5>
 
 ~~~
 podman run -d -p 8080:8088 -e "SUPERSET_SECRET_KEY=your_secret_key_here" --name superset apache/superset 
@@ -437,7 +414,7 @@ aman@aman:~$
 
 
 
-**Step 11. To check podman container is running or not.**
+# <H5>Step 11. To check podman container is running or not.</H5>
 
 ~~~
 podman ps
@@ -460,7 +437,7 @@ aman@aman:~$
 ```
 
 
-**Step 12. Set up your local admin account.**
+# <H5>Step 12. Set up your local admin account.</H5>
 
 ~~~
  podman exec -it superset superset fab create-admin \
@@ -513,7 +490,7 @@ aman@aman:~$
 
 
 
-**Step 13. Migrate local DB to the latest.**
+# <H5>Step 13. Migrate local DB to the latest.</H5>
 
 ~~~
  podman exec -it superset superset db upgrade
@@ -561,7 +538,7 @@ INFO  [alembic.runtime.migration] Running upgrade 2929af7925ed -> 289ce07647b, A
 
 
 
-**Step 14. Setup roles.**
+# <H5>Step 14. Setup roles.</H5>
 
 ~~~
 podman  exec -it superset superset init
@@ -611,8 +588,7 @@ aman@aman:~$
 ```
 
 
-
-**Step 15. Load Examples.**
+# <H5>Step 15. Load Examples.</H5>
 
 
 ~~~
@@ -659,7 +635,7 @@ Done loading table!
 
 
 
- **Step 16. Open the browser.**
+ # <H5>Step 16. Open the browser.</H5>
 
  This is the correct URL is :-
  
