@@ -48,9 +48,9 @@ OS: Ubuntu 22.04
 System configuration
      
 
-CPU:  Intel Core i5-8350U CPU @ 1.70GHz x 8
-RAM:  8GB 
-Storage:  512GB 
+CPU: 2
+RAM:  2GB 
+Storage:   30GB
 
 # <H5>4.  List of tools and technologies</H5>
 
@@ -78,7 +78,7 @@ sudo apt update
 **sudo:** This stands for "Superuser Do" and is used to execute commands with superuser (administrator) privileges. 
 It allows you to perform actions that require elevated permissions.
 
-**apt:** This stands for "Advanced Package Tool." manager used for managing software.
+**apt:** This stands for "Advanced Package Tool." The manager is used for managing software.
 
 **update:** This is a subcommand of apt that instructs the package manager to update the package information.
 
@@ -123,7 +123,7 @@ Calculating upgrade... Done
 The following NEW packages will be installed:
   ubuntu-pro-client-l10n
 The following packages will be upgraded:
-  accountsservice amd64-microcode apparmor apport apport-gtk apt apt-utils avahi-autoipd avahi-daemon
+  accounts service amd64-microcode apparmor apport apport-gtk apt apt-utils avahi-autoipd avahi-daemon
   avahi-utils bind9-dnsutils bind9-host bind9-libs bolt bsdutils ca-certificates cpp-9 cups
   cups-browsed cups-bsd cups-client cups-common cups-core-drivers cups-daemon cups-filters
   cups-filters-core-drivers cups-ipp-utils cups-ppdc cups-server-common distro-info distro-info-data
@@ -365,7 +365,7 @@ SECRET_KEY =' bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN'
 **Note:-** in this file save the above generate key.
 
 
-# <H5>Step 10. To create podman container.</H5>
+# <H5>Step 10. To create a podman container.</H5>
 
 ~~~
 podman run -d -p 8080:8088 -e "SUPERSET_SECRET_KEY=your_secret_key_here" --name superset apache/superset 
