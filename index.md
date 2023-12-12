@@ -25,7 +25,7 @@ OS: Ubuntu 22.04
 System configuration
      
 
-CPU: 2
+CPU: 2 
 RAM:  2GB 
 Storage:   30GB
 
