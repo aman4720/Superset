@@ -10,16 +10,16 @@
 This document provides a step-by-step overview of setting up Apache using Podman and on an Ubuntu 22.04 system.
 
 
-# <H5>2. Task requirement</H5>
+## 2. Task requirement
 
 To install the superset with a podman. 
 
 
-# <H5>3. Definition of superset</H5>
+## 3. Definition of superset
 
 Superset is a tool that helps people look at data and make graphs and charts easily. It can be used instead of expensive business tools and works with different types of data. You can use it to create charts without knowing how to code it's simple and quick.
 
-# <H5>3.  Environment details</H5>
+## 3.  Environment details
 
 OS: Ubuntu 22.04 
 System configuration
@@ -29,14 +29,14 @@ CPU: 2
 RAM:  2GB 
 Storage:   30GB
 
-# <H5>4.  List of tools and technologies</H5>
+## 4.  List of tools and technologies
 
 Podman version 3.4.2
 
 VIM
 
 
-# <H5>5. Definition of tools</H5>
+## 5. Definition of tools
 
 Podman - It is an open-source tool for developing, managing, and running containers on your Linux systems. 
 
@@ -44,9 +44,9 @@ Vim - It is a highly configurable text editor built to make creating and changin
 
 
 
-# <H5>6.  Command for the setup or configuration<H5>
+## 6.  Command for the setup or configuration
 
-# <H5>Step 1. Updating Packages and Repositories.<H5>
+## Step 1. Updating Packages and Repositories.
 
 ~~~
 sudo apt update
@@ -78,7 +78,7 @@ aman@aman:~$
 
 
 
-# <H5>Step 2. Run the Upgrade command.<H5>
+## Step 2. Run the Upgrade command.
 
 ~~~
 sudo apt upgrade
@@ -114,7 +114,7 @@ The following packages will be upgraded:
 
 
 
-# <H5>Step 3. Run the following command to install Podman.</H5>
+## Step 3. Run the following command to install Podman.
 
 ~~~
  sudo apt install podman 
@@ -154,7 +154,7 @@ Need to get 25.4 MB of archives.
 
 
 
-# <H5>Step 4. Run the following command to check the Podman version.</H5>
+## Step 4. Run the following command to check the Podman version.
 
 ~~~
  podman version 
@@ -177,7 +177,7 @@ aman@aman:~$
 ```
 
 
-# <H5>Step 5. Run the echo command</H5>
+## Step 5. Run the echo command
 
 ~~~
 echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/containers/registries.conf
@@ -206,7 +206,7 @@ aman@aman:~$
 ```
 
 
-# <H5> Step 6. Pull Apache in superset.</H5>
+## Step 6. Pull Apache in superset.
 
 ~~~
 podman pull apache/superset
@@ -245,7 +245,7 @@ aman@aman:~$
 ```
 
 
-# <H5> Step 7. Run the command to install vim.</H5>
+## Step 7. Run the command to install vim.
 
 ~~~
 sudo apt install vim
@@ -284,7 +284,7 @@ Do you want to continue? [Y/n] y
 ```
 
 
-# <H5>Step 8. Run command openssl.</H5>
+## Step 8. Run command openssl.
 
 ~~~
 openssl rand -base64 42
@@ -311,7 +311,7 @@ bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN
 ```
 
 
-# <H5>Step 9.  Create a file .</H5>
+## Step 9.  Create a file .
 
 ~~~
  vim superset_config.py
@@ -342,7 +342,7 @@ SECRET_KEY =' bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN'
 **Note:-** in this file save the above generate key.
 
 
-# <H5>Step 10. To create a podman container.</H5>
+## Step 10. To create a podman container.
 
 ~~~
 podman run -d -p 8080:8088 -e "SUPERSET_SECRET_KEY=your_secret_key_here" --name superset apache/superset 
@@ -394,7 +394,7 @@ aman@aman:~$
 
 
 
-# <H5>Step 11. To check podman container is running or not.</H5>
+## Step 11. To check podman container is running or not.
 
 ~~~
 podman ps
@@ -417,7 +417,7 @@ aman@aman:~$
 ```
 
 
-# <H5>Step 12. Set up your local admin account.</H5>
+## Step 12. Set up your local admin account.
 
 ~~~
  podman exec -it superset superset fab create-admin \
@@ -470,7 +470,7 @@ aman@aman:~$
 
 
 
-# <H5>Step 13. Migrate local DB to the latest.</H5>
+## Step 13. Migrate local DB to the latest.
 
 ~~~
  podman exec -it superset superset db upgrade
@@ -518,7 +518,7 @@ INFO  [alembic.runtime.migration] Running upgrade 2929af7925ed -> 289ce07647b, A
 
 
 
-# <H5>Step 14. Setup roles.</H5>
+## Step 14. Setup roles.
 
 ~~~
 podman  exec -it superset superset init
@@ -568,7 +568,7 @@ aman@aman:~$
 ```
 
 
-# <H5>Step 15. Load Examples.</H5>
+## Step 15. Load Examples.
 
 
 ~~~
@@ -615,7 +615,7 @@ Done loading table!
 
 
 
- # <H5>Step 16. Open the browser.</H5>
+ ## Step 16. Open the browser.
 
  This is the correct URL is :-
  
