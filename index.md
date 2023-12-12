@@ -21,12 +21,10 @@ Superset is a tool that helps people look at data and make graphs and charts eas
 
 ## 3.  Environment details
 
-OS: Ubuntu 22.04 (64 bit)
-
-
+OS: Ubuntu 22.04 (64 bit)</br>
 CPU: 2 core </br>
 RAM:  2GB </br>
-Storage:   30GB
+
 
 ## 4.  List of tools and technologies
 
@@ -152,9 +150,9 @@ Need to get 25.4 MB of archives.
 ~~~
  podman version 
 ~~~
-**Podman :** is a tool that helps you manage containers, which are like virtual machines for running applications.
+**Podman:** is a tool that helps you manage containers, which are like virtual machines for running applications.
 
-**version :** You're checking which edition of Podman you have. It's like checking if you have the latest or older version with improvements or fixes.
+**version:** You're checking which edition of Podman you have. It's like checking if you have the latest or older version with improvements or fixes.
 
 
  **Output**
@@ -612,13 +610,11 @@ Done loading table!
 
  This is the correct URL is :-
  
- http://localhost:8080/login/ 
+ localhost:8080/login/ 
      
  Note :- ( User / Password )
  
  [admin/admin]
-
-http://: The protocol used for the web communication (Hypertext Transfer Protocol).
 
 localhost: Refers to the local machine, meaning the same computer that you are currently using.
 
