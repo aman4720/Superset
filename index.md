@@ -35,6 +35,7 @@ Podman - It is an open-source tool for developing, managing, and running contain
 
 ## 6. command for the setup or configuration
 
+
 ## Step 1. Updating Packages and Repositories.
 
 ~~~
