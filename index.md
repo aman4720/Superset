@@ -1,6 +1,6 @@
 
 
-# Setup Superset
+# Superset
 
 
 ## 1. Overview
