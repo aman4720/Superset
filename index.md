@@ -115,7 +115,7 @@ The following packages will be upgraded:
 
 **install:** is the action you want to perform, which means you want to add the specified software to your system.
 
-**Podman :** is the name of the software you want to install. Podman is a tool used for managing containers, similar to Docker.
+**Podman:** is the name of the software you want to install. Podman is a tool used for managing containers, similar to Docker.
 
 
 **Output**
@@ -182,7 +182,7 @@ sudo: Runs the following command with superuser (administrator) privileges.
 
 tee /etc/containers/registries.conf: Writes the echoed text to the specified file (/etc/containers/registries.conf) with superuser permissions.
 
-So, in short, this command sets up container registry configurations, specifically telling the system to search for container images on Docker Hub (docker.io), and writes this configuration to the /etc/containers/registries.conf file using superuser privileges.
+So, this command sets up container registry configurations, specifically telling the system to search for container images on Docker Hub (docker.io), and writes this configuration to the /etc/containers/registries.conf file using superuser privileges.
 
 
 
@@ -207,7 +207,7 @@ podman pull apache/superset
 
 **Apache/superset:** The name of the container image to pull. In this case, it's the Apache Superset image.
 
-So, In  this command is telling Podman to download (pull) the Apache Superset container image from the default container registry.
+So, In  this command tells Podman to download (pull) the Apache Superset container image from the default container registry.
 
 
 **Output**
@@ -287,7 +287,7 @@ rand: Specifies the random number generator command in OpenSSL.
 
 42: Specifies the number of bytes to generate.
 
-So, in short, this command generates 42 random bytes, and then encodes them in Base64 format using the OpenSSL tool.
+So, In, this command generates 42 random bytes, and then encodes them in Base64 format using the OpenSSL tool.
 
 
 
@@ -300,7 +300,7 @@ bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN
 ```
 
 
-## Step 9.  Create a file .
+## Step 9.  Create a file.
 
 ~~~
  vim superset_config.py
@@ -310,7 +310,7 @@ bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN
 
 superset_config.py: The name of the file to open/edit. In this case, it's a Python configuration file for Superset.
 
-So, in short, this command opens the superset_config.py file in the Vim text editor, allowing you to view and modify its content.
+So, in, this command opens the superset_config.py file in the Vim text editor, allowing you to view and modify its content.
 
 
 **Output**
@@ -346,11 +346,11 @@ run Command to start a new container.
 
 -e "SUPERSET_SECRET_KEY=your_secret_key_here": Sets an environment variable SUPERSET_SECRET_KEY with the specified value.
 
---name superset: Assigns the name "superset" to the running container.
+--name superset: Assign the name "superset" to the running container.
 
 apache/superset: Specifies the container image to use, in this case, Apache Superset.
 
-So, in short, this command runs a detached Apache Superset container, mapping container port 8088 to host port 8080, setting an environment variable for Superset's secret key, and naming the container "superset."
+So, in, this command runs a detached Apache Superset container, mapping container port 8088 to host port 8080, setting an environment variable for Superset's secret key, and naming the container "superset."
 
 
 
@@ -393,7 +393,7 @@ podman ps
 
 **ps**: Stands for "process status." It shows the status of currently running containers.
 
-So, in short, this command lists the currently running containers along with their details, such as container IDs, names, and status.
+So, in, this command lists the currently running containers along with their details, such as container IDs, names, and status.
 
 
 **Output**
@@ -434,7 +434,7 @@ superset fab create-admin: Runs the Superset command-line tool (fab) to create a
 --email admin@superset.com: Specifies the email address for the new admin user.
 --password admin: Specifies the password for the new admin user.
 
-So, in short, this command creates a new admin user in a running Superset container with specified details such as username, first name, last name, email, and password.
+So, in, this command creates a new admin user in a running Superset container with specified details such as username, first name, last name, email, and password.
 
 
 
@@ -475,7 +475,7 @@ superset: The name of the container in which to execute the command.
 
 superset db upgrade: Runs the Superset command to apply database migrations, updating the database schema.
 
-So, in short, this command upgrades the Superset database schema in the running Superset container.
+So, in, this command upgrades the Superset database schema in the running Superset container.
 
 **Output**
 
@@ -523,7 +523,7 @@ superset: The name of the container in which to execute the command.
 
 superset init: Initializes Superset, often used for setting up initial configurations and structures.
 
-So, in short, this command initializes Superset within the running container, likely performing setup tasks or configurations needed for Superset to run properly.
+So, in, this command initializes Superset within the running container, likely performing setup tasks or configurations needed for Superset to run properly.
 
 
 **Output**
@@ -574,7 +574,7 @@ superset: The name of the container in which to execute the command.
 
 superset load_examples: Runs the Superset command to load example data or dashboards.
 
-So, in short, this command loads example data or dashboards into Superset within the running container. It's often used to provide users with pre-configured examples to explore and understand the capabilities of Superset.
+So, in, this command loads example data or dashboards into Superset within the running container. It's often used to provide users with pre-configured examples to explore and understand the capabilities of Superset.
 
 **Output**
 
@@ -620,7 +620,7 @@ Done loading table!
 
 /login/: The path or route on the web server, pointing to the login page.
 
-In short, this URL represents the login page of a web service or application running on your local machine, accessible through a web browser by navigating to http://localhost:8080/login/.
+In, this URL represents the login page of a web service or application running on your local machine, accessible through a web browser by navigating to http://localhost:8080/login/.
 
 
 **Output**
