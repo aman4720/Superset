@@ -21,27 +21,20 @@ Superset is a tool that helps people look at data and make graphs and charts eas
 
 ## 3.  Environment details
 
-OS: Ubuntu 22.04 
-System configuration
-     
+OS: Ubuntu 22.04 (64 bit)
 
-CPU: 2 
-RAM:  2GB 
+
+CPU: 2 core </br>
+RAM:  2GB </br>
 Storage:   30GB
 
 ## 4.  List of tools and technologies
 
 Podman version 3.4.2
 
-VIM
-
-
-## 5. Definition of tools
+## 5. Definition of tool
 
 Podman - It is an open-source tool for developing, managing, and running containers on your Linux systems. 
-
-Vim - It is a highly configurable text editor built to make creating and changing any kind of text very efficient.
-
 
 
 ## 6.  Command for the setup or configuration
