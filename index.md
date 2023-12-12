@@ -1,7 +1,5 @@
 
 
-
-
 # Setup Superset
 
 
@@ -35,7 +33,7 @@ Podman version 3.4.2
 Podman - It is an open-source tool for developing, managing, and running containers on your Linux systems. 
 
 
-## 6.  Command for the setup or configuration
+## 6. command for the setup or configuration
 
 ## Step 1. Updating Packages and Repositories.
 
@@ -203,11 +201,11 @@ aman@aman:~$
 podman pull apache/superset
 ~~~
 
-podman: A container management tool similar to Docker.
+**podman**: A container management tool similar to Docker.
 
-pull: Command used to download a container image from a container registry.
+**pull**: Command used to download a container image from a container registry.
 
-apache/superset: The name of the container image to pull. In this case, it's the Apache Superset image.
+**Apache/superset:** The name of the container image to pull. In this case, it's the Apache Superset image.
 
 So, In  this command is telling Podman to download (pull) the Apache Superset container image from the default container registry.
 
@@ -281,7 +279,7 @@ Do you want to continue? [Y/n] y
 openssl rand -base64 42
 ~~~
 
-openssl: A command-line tool for using the OpenSSL library, often used for cryptographic operations.
+**openssl**: A command-line tool for using the OpenSSL library, often used for cryptographic operations.
 
 rand: Specifies the random number generator command in OpenSSL.
 
@@ -308,7 +306,7 @@ bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN
  vim superset_config.py
 ~~~
 
-vim: A text editor used in the command line.
+**vim**: A text editor used in the command line.
 
 superset_config.py: The name of the file to open/edit. In this case, it's a Python configuration file for Superset.
 
@@ -338,9 +336,9 @@ SECRET_KEY =' bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN'
 ~~~
 podman run -d -p 8080:8088 -e "SUPERSET_SECRET_KEY=your_secret_key_here" --name superset apache/superset 
 ~~~
-podman: A container management tool similar to Docker.
+**podman**: A container management tool similar to Docker.
 
-run: Command to start a new container.
+run Command to start a new container.
 
 -d: Runs the container in the background (detached mode).
 
@@ -391,9 +389,9 @@ aman@aman:~$
 podman ps
 ~~~
 
-podman: A container management tool similar to Docker.
+**podman**: A container management tool similar to Docker.
 
-ps: Stands for "process status." It shows the status of currently running containers.
+**ps**: Stands for "process status." It shows the status of currently running containers.
 
 So, in short, this command lists the currently running containers along with their details, such as container IDs, names, and status.
 
@@ -419,7 +417,7 @@ aman@aman:~$
               --password admin
 ~~~
 
-podman: A container management tool similar to Docker.
+**podman**: A container management tool similar to Docker.
 
 exec: Executes a command in a running container.
 
@@ -467,7 +465,7 @@ aman@aman:~$
  podman exec -it superset superset db upgrade
 ~~~
 
-podman: A container management tool similar to Docker.
+**podman**: A container management tool similar to Docker.
 
 exec: Executes a command in a running container.
 
@@ -515,7 +513,7 @@ INFO  [alembic.runtime.migration] Running upgrade 2929af7925ed -> 289ce07647b, A
 podman  exec -it superset superset init
 ~~~
 
-podman: A container management tool similar to Docker.
+**podman**: A container management tool similar to Docker.
 
 exec: Executes a command in a running container.
 
@@ -566,7 +564,7 @@ aman@aman:~$
  podman exec -it superset superset load_examples
 ~~~
 
-podman: A container management tool similar to Docker.
+**podman**: A container management tool similar to Docker.
 
 exec: Executes a command in a running container.
 
@@ -608,15 +606,15 @@ Done loading table!
 
  ## Step 16. Open the browser.
 
- This is the correct URL is :-
+ This is the correct URL is:-
  
  localhost:8080/login/ 
      
- Note :- ( User / Password )
+ Note:- ( User / Password )
  
  [admin/admin]
 
-localhost: Refers to the local machine, meaning the same computer that you are currently using.
+**localhost**: Refers to the local machine, meaning the same computer that you are currently using.
 
 :8080: Specifies the port number 8080, indicating a specific communication endpoint on the local machine.
 
