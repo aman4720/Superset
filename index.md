@@ -17,6 +17,7 @@ To install the superset with a podman.
 
 Superset is a tool that helps people look at data and make graphs and charts easily. It can be used instead of expensive business tools and works with different types of data. You can use it to create charts without knowing how to code it's simple and quick.
 
+
 ## 3.  Environment details
 
 OS: Ubuntu 22.04 (64 bit)</br>
@@ -28,12 +29,14 @@ RAM:  2GB </br>
 
 Podman version 3.4.2
 
+
 ## 5. Definition of tool
 
-Podman - It is an open-source tool for developing, managing, and running containers on your Linux systems. 
+**Podman** - It is an open-source tool for developing, managing, and running containers on your Linux systems. 
 
 
 ## 6. command for the setup or configuration
+
 
 
 ## Step 1. Updating Packages and Repositories.
@@ -116,7 +119,7 @@ The following packages will be upgraded:
 
 **install:** is the action you want to perform, which means you want to add the specified software to your system.
 
-**Podman:** is the name of the software you want to install. Podman is a tool used for managing containers, similar to Docker.
+**Podman:** is the name of the software you want to install. Podman is a tool used for managing containers.
 
 
 **Output**
@@ -621,7 +624,7 @@ Done loading table!
 
 /login/: The path or route on the web server, pointing to the login page.
 
-In, this URL represents the login page of a web service or application running on your local machine, accessible through a web browser by navigating to http://localhost:8080/login/.
+
 
 
 **Output**
