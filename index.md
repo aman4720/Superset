@@ -186,8 +186,6 @@ sudo: Runs the following command with superuser (administrator) privileges.
 
 tee /etc/containers/registries.conf: Writes the echoed text to the specified file (/etc/containers/registries.conf) with superuser permissions.
 
-So, this command sets up container registry configurations, specifically telling the system to search for container images on Docker Hub (docker.io), and writes this configuration to the /etc/containers/registries.conf file using superuser privileges.
-
 
 
 **Output**
@@ -210,8 +208,6 @@ podman pull apache/superset
 **pull**: Command used to download a container image from a container registry.
 
 **Apache/superset:** The name of the container image to pull. In this case, it's the Apache Superset image.
-
-So, In  this command tells Podman to download (pull) the Apache Superset container image from the default container registry.
 
 
 **Output**
@@ -291,9 +287,6 @@ rand: Specifies the random number generator command in OpenSSL.
 
 42: Specifies the number of bytes to generate.
 
-So, In, this command generates 42 random bytes, and then encodes them in Base64 format using the OpenSSL tool.
-
-
 
 **output**
 
@@ -311,11 +304,6 @@ bpAbwShYgeG2EVpm5I/c+kV79UhhXhBUKGQJtR4shUKhMt/QJl3hWGWN
 ~~~
 
 **vim**: A text editor used in the command line.
-
-superset_config.py: The name of the file to open/edit. In this case, it's a Python configuration file for Superset.
-
-So, in, this command opens the superset_config.py file in the Vim text editor, allowing you to view and modify its content.
-
 
 **Output**
 
@@ -353,9 +341,6 @@ run Command to start a new container.
 --name superset: Assign the name "superset" to the running container.
 
 apache/superset: Specifies the container image to use, in this case, Apache Superset.
-
-So, in, this command runs a detached Apache Superset container, mapping container port 8088 to host port 8080, setting an environment variable for Superset's secret key, and naming the container "superset."
-
 
 
 **Output**
@@ -396,8 +381,6 @@ podman ps
 **podman**: A container management tool similar to Docker.
 
 **ps**: Stands for "process status." It shows the status of currently running containers.
-
-So, in, this command lists the currently running containers along with their details, such as container IDs, names, and status.
 
 
 **Output**
@@ -479,7 +462,6 @@ superset: The name of the container in which to execute the command.
 
 superset db upgrade: Runs the Superset command to apply database migrations, updating the database schema.
 
-So, in, this command upgrades the Superset database schema in the running Superset container.
 
 **Output**
 
@@ -527,7 +509,6 @@ superset: The name of the container in which to execute the command.
 
 superset init: Initializes Superset, often used for setting up initial configurations and structures.
 
-So, in, this command initializes Superset within the running container, likely performing setup tasks or configurations needed for Superset to run properly.
 
 
 **Output**
@@ -578,7 +559,6 @@ superset: The name of the container in which to execute the command.
 
 superset load_examples: Runs the Superset command to load example data or dashboards.
 
-So, in, this command loads example data or dashboards into Superset within the running container. It's often used to provide users with pre-configured examples to explore and understand the capabilities of Superset.
 
 **Output**
 
