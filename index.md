@@ -81,7 +81,7 @@ sudo apt upgrade
 
 **apt:** This stands for "Advanced Package Tool." You can use it to install, update, remove, and manage software packages.
 
-**Update:** The package information is a database of available software packages, their versions, and where to download them from. 
+**Upgrade:** This command helps ensure that the software on your system is up-to-date with the latest features, improvements, and security patches. 
 
 **Output**
 ```
